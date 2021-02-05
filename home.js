@@ -1,17 +1,27 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, Button} from 'react-native';
+import {View, Button} from 'react-native';
 
-export default function home({navigation}){
+export default function Home({navigation}){
 
-   const pressHandler = () =>{
-       navigation.navigate('barCodeScanner');
+   const changeToBarcodeScanner = () =>{
+       navigation.navigate('route2');
    }
 
+   const changeToAboutUs = () =>{
+    navigation.navigate('route3');
+}
+
    return(
-    <Button
-     title = "Open Scanner"
-     onPress = {pressHandler}
-    />
+    <View style = {{justifyContent: 'center', padding: 10, flex: 1,}}>
+        <Button
+        title = "Open Scanner"
+        onPress = {changeToBarcodeScanner}
+        />
+        <Button
+        title = "About Us"
+        onPress = {changeToAboutUs}
+        />
+    </View>
    )
 }
 

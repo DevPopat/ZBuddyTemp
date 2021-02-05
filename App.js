@@ -2,11 +2,13 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {Container, Content, Header, Form, Input, Item, Label, Button} from 'native-base'
 import * as Permissions from 'expo-permissions';
-import Navigator from './routes/homeStack';
+//import Navigator from './routes/homeStack';
+import AppNavigator from './routes/SwitchScreenNavigation';
 import * as firebase from 'firebase'
 
+
 // Initialize Firebase
-const firebaseConfig = {
+/*const firebaseConfig = {
   apiKey: "AIzaSyAMXc0fWCr8gnjMEUSS2u8PEeI95rma178",
   authDomain: "zbuddy-3a716.firebaseapp.com",
   databaseURL: "https://zbuddy-3a716-default-rtdb.firebaseio.com",
@@ -19,11 +21,10 @@ const firebaseConfig = {
 
 if(firebase.apps.length == 0){
   firebase.initializeApp(firebaseConfig);
-}
-
+}*/
 
 export default class App extends Component{
-  constructor(props){
+  /*constructor(props){
     super(props)
     this.state = ({
       CameraPermissionsGranted: null,
@@ -32,6 +33,7 @@ export default class App extends Component{
     })
   }   
   
+
   signUpUser = (email, password) =>{
 
     try{
@@ -61,10 +63,11 @@ export default class App extends Component{
   async componentDidMount(){
     const {status} = await Permissions.askAsync(Permissions.CAMERA);
     this.setState({CameraPermissionsGranted: status == "granted" ? true: false});
-  }
+  }*/
 
   render(){
-    const {CameraPermissionsGranted} = this.state;
+    return(<AppNavigator/>);
+    /*const {CameraPermissionsGranted} = this.state;
     if(CameraPermissionsGranted == null){
       return(
         <View style = {styles.container}>
@@ -119,21 +122,20 @@ export default class App extends Component{
             >
               <Text style = {{color: 'white'}}>Sign up</Text>
             </Button>
-
           </Form>
-          <Navigator/>
+          <AppNavigator/>
         </Container>
         
       );
-    }
+    }*/
   } 
 }
 
-const styles = StyleSheet.create({
+/*const styles = StyleSheet.create({
     container: {
     flex: 1,
     backgroundColor: '#fff',
     justifyContent: 'center',
     padding: 10,
   },
-});
+});*/

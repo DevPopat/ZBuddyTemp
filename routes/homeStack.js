@@ -1,14 +1,14 @@
 import {createStackNavigator} from 'react-navigation-stack';
 import {createAppContainer} from 'react-navigation';
-import home from '../home';
-import barCodeScanner from '../barCodeScanner';
+import Home from '../Home';
+import BarcodeScanner from '../BarcodeScanner';
 
 const screens = {
-    home: {
-        screen: home
+    Home: {
+        screen: Home
     },
-    barCodeScanner: {
-        screen: barCodeScanner
+    BarcodeScanner: {
+        screen: BarcodeScanner
     }
 }
 const HomeStack = createStackNavigator(screens);
